@@ -1,5 +1,5 @@
 # Welcome to Postal Router
-O Postal Router foi desenvolvido como API rest em NodeJS, e persistência em mongoDB virtualizado por docker.
+O Postal Router foi desenvolvido como API rest em NodeJS, e persistência em mongoDB virtualizado por docker. Foi utilizado o algoritmo **djikstra** para calcular a menor rota. O Código foi todo desenvolvido utilizando programação funcional.
 
 ## Bibliotecas utilizadas
     "cors": "^2.8.5",
