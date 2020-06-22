@@ -14,12 +14,13 @@ O Postal Router foi desenvolvido como API rest em NodeJS, e persistência em mon
 
 Para rodar a aplicação tenha instalado na maquina o **NodeJS**, **NPM** e o (docker ou mongoDB), durante o desenvolvimento foi utilizada uma instância de mogoDB em docker.
 
-Na pasta do Postal-Router execute os abaixo:
+Na pasta do Postal-Router execute os comandos abaixo:
 
 ## Comandos
     npm install
 
 para rodar com instância do mongoDB em docker:
+
     docker pull mongo
     docker run --name mongoDB -p 27017:27017 -d mongo
 
