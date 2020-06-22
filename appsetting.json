@@ -1,0 +1,284 @@
+{
+    "database": {
+        "stringConnection": "mongodb://localhost:27017/nodeapi",
+        "connectionOptions": {
+            "useNewUrlParser": true,
+            "useUnifiedTopology": true,
+            "useFindAndModify": false
+        }
+    },
+    "server": {
+        "portNumber": 3001
+    },
+    "swaggerOptions": {
+        "swaggerDefinition": {
+            "info": {
+                "description": "This is a sample server",
+                "title": "Swagger",
+                "version": "1.0.0",
+                "contact": {
+                    "name": "Kirkpatrick"
+                },
+                "servers": [
+                    "http://localhost:3001"
+                ]
+            },
+            "produces": [
+                "application/json"
+            ],
+            "schemes": [
+                "http"
+            ],
+            "tags": [
+                {
+                    "name": "City",
+                    "description": "Access to City operations"
+                }
+            ],
+            "paths": {
+                "/api/": {
+                    "get": {
+                        "tags": [
+                            "Test"
+                        ],
+                        "description": "Use to request test.",
+                        "responses": {
+                            "200": {
+                                "description": "A successful response"
+                            }
+                        }
+                    }
+                },
+                "/api/cities": {
+                    "get": {
+                        "tags": [
+                            "City"
+                        ],
+                        "description": "Use to list paginated of Cities.",
+                        "produces": [
+                            "application/json"
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "A Successfully response"
+                            }
+                        }
+                    }
+                },
+                "/api/cities/{id}": {
+                    "get": {
+                        "tags": [
+                            "City"
+                        ],
+                        "description": "Use to return one City.",
+                        "produces": [
+                            "application/json"
+                        ],
+                        "parameters": [
+                            {
+                                "name": "id",
+                                "in": "path",
+                                "description": "id or acronym of City",
+                                "required": true,
+                                "schema": {
+                                    "type": "string",
+                                    "format": "string"
+                                }
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Successfully show City"
+                            }
+                        }
+                    },
+                    "put": {
+                        "tags": [
+                            "City"
+                        ],
+                        "description": "Use to include a City.",
+                        "produces": [
+                            "application/json"
+                        ],
+                        "parameters": [
+                            {
+                                "name": "id",
+                                "in": "path",
+                                "description": "id or acronym of City",
+                                "required": true,
+                                "schema": {
+                                    "type": "string",
+                                    "format": "string"
+                                }
+                            },
+                            {
+                                "in": "body",
+                                "name": "body",
+                                "description": "City object that needs to be added to the store",
+                                "required": true,
+                                "schema": {
+                                    "$ref": "#/definitions/City"
+                                }
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Successfully show City"
+                            }
+                        }
+                    },
+                    "delete": {
+                        "tags": [
+                            "City"
+                        ],
+                        "description": "Use to remove one City.",
+                        "produces": [
+                            "application/json"
+                        ],
+                        "parameters": [
+                            {
+                                "name": "id",
+                                "in": "path",
+                                "description": "id of City",
+                                "required": true,
+                                "schema": {
+                                    "type": "string",
+                                    "format": "string"
+                                }
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Successfully show City"
+                            }
+                        }
+                    }
+                },
+                "/api/cities/": {
+                    "post": {
+                        "tags": [
+                            "City"
+                        ],
+                        "description": "Use to include a City.",
+                        "produces": [
+                            "application/json"
+                        ],
+                        "parameters": [
+                            {
+                                "in": "body",
+                                "name": "body",
+                                "description": "City object that needs to be added to the store",
+                                "required": true,
+                                "schema": {
+                                    "$ref": "#/definitions/City"
+                                }
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "Successfully show City"
+                            }
+                        }
+                    }
+                },
+                "/api/stretches": {
+                    "get": {
+                        "tags": [
+                            "Stretch"
+                        ],
+                        "description": "Use to list paginated of Cities.",
+                        "produces": [
+                            "application/json"
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "A Successfully response"
+                            }
+                        }
+                    },
+                    "post": {
+                        "tags": [
+                            "Stretch"
+                        ],
+                        "summary": "uploads a file txt",
+                        "description": "Use to send file stretches.txt.",
+                        "consumes": [
+                            "multipart/form-data"
+                        ],
+                        "produces": [
+                            "application/json"
+                        ],
+                        "parameters": [
+                            {
+                                "name": "stretches",
+                                "in": "formData",
+                                "description": "file to upload stretches.txt",
+                                "required": true,
+                                "type": "file"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "A successful response"
+                            }
+                        }
+                    }
+                },
+                "/api/posts": {
+                    "post": {
+                        "tags": [
+                            "Stretch"
+                        ],
+                        "summary": "uploads a file txt",
+                        "description": "Use to send file posts.txt.",
+                        "consumes": [
+                            "multipart/form-data"
+                        ],
+                        "produces": [
+                            "application/json"
+                        ],
+                        "parameters": [
+                            {
+                                "name": "posts",
+                                "in": "formData",
+                                "description": "file to upload posts.txt",
+                                "required": true,
+                                "type": "file"
+                            }
+                        ],
+                        "responses": {
+                            "200": {
+                                "description": "A successful response"
+                            }
+                        }
+                    }                    
+                }
+            },
+            "definitions": {
+                "City": {
+                    "type": "object",
+                    "properties": {
+                        "name": {
+                            "type": "string",
+                            "minLength": 3,
+                            "maxLength": 50
+                        },
+                        "acronym": {
+                            "type": "string",
+                            "maxLength": 2,
+                            "minLength": 2
+                        }
+                    },
+                    "xml": {
+                        "name": "City"
+                    }
+                }
+            }
+        },
+        "apis": [
+            "server.js",
+            "./src/routes.js",
+            "./src/routes/**/*.js"
+        ]
+    }
+}
