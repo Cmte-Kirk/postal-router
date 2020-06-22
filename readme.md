@@ -25,9 +25,22 @@ para rodar com instância do mongoDB em docker:
     docker run --name mongoDB -p 27017:27017 -d mongo
 
 Para inicializar a aplicação:
+
     npm run dev
 
 ## Operação
 A aplicação por padrão roda em [http://localhost:3001/](http://localhost:3001/)
 O swagger pode ser encontrado em [http://localhost:3001/api-docs](http://localhost:3001/api-docs) que contém toda documentação de operação.
 
+É necessário que seja cadastrado as cidades pela rota abaixo antes de rodar os arquivos de trechos e encomentas:
+
+    post -> /api/cities/
+
+Para cadastrar / Atualizar trechos utilize a rota abaixo e envie o arquivo:
+
+    post -> /api/stretches
+    
+Para calcular a melhor rota para encomendas utilize a rota será devolvido um arquivo txt:
+
+    post -> /api/posts
+    
